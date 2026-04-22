@@ -1,0 +1,100 @@
+{
+  "intents": [
+    {
+      "tag": "greeting",
+      "patterns": ["hi", "hello", "hey", "good morning", "good evening"],
+      "responses": ["Hello!", "Hi there!", "Hey! How can I help?"]
+    },
+    {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you later", "talk to you later"],
+      "responses": ["Goodbye!", "See you later!", "Bye! Have a great day!"]
+    },
+    {
+      "tag": "thanks",
+      "patterns": ["thanks", "thank you", "thanks a lot"],
+      "responses": ["You're welcome!", "No problem!", "Glad to help!"]
+    },
+    {
+      "tag": "name",
+      "patterns": ["what is your name", "who are you", "your name"],
+      "responses": ["I am your chatbot assistant.", "You can call me NLP Bot."]
+    },
+    {
+      "tag": "how_are_you",
+      "patterns": ["how are you", "how are you doing", "are you fine"],
+      "responses": ["I'm doing great!", "I'm fine, thank you!", "All good here!"]
+    },
+    {
+      "tag": "age",
+      "patterns": ["how old are you", "your age"],
+      "responses": ["I don't have an age like humans.", "I am timeless!"]
+    },
+    {
+      "tag": "help",
+      "patterns": ["can you help me", "help me", "i need help"],
+      "responses": ["Of course! How can I assist?", "I'm here to help you."]
+    },
+    {
+      "tag": "weather",
+      "patterns": ["how is the weather", "weather today", "is it raining"],
+      "responses": ["I can't check live weather, but it might be sunny!", "Please check a weather app for live updates."]
+    },
+    {
+      "tag": "hobbies",
+      "patterns": ["what do you do for fun", "what are your hobbies", "your hobby"],
+      "responses": ["I enjoy chatting with people!", "Helping and talking with you is my favorite thing."]
+    },
+    {
+      "tag": "creator",
+      "patterns": ["who created you", "who made you"],
+      "responses": ["I was created by a developer name Guru balaji.", "A programmer built me."]
+    },
+    {
+      "tag": "joke",
+      "patterns": ["tell me a joke", "say some joke", "make me laugh", "say something funny"],
+      "responses": ["Why do programmers prefer dark mode? Because light attracts bugs!", "I would tell you a joke about coding, but it has too many bugs."]
+    },
+    {
+      "tag": "farewell",
+      "patterns": ["good night", "take care", "have a nice day"],
+      "responses": ["Good night!", "Take care!", "Have a wonderful day!"]
+    },
+      {
+      "tag": "likes",
+      "patterns": ["what do you like", "what is your favorite thing", "what do you love"],
+      "responses": ["I like meaningful conversations.", "I enjoy helping people and learning from chats."]
+    },
+     {
+      "tag": "friendship",
+      "patterns": ["can we be friends", "are you my friend", "be my friend"],
+      "responses": ["Of course! I'd love to be your friend.", "Yes, I'm always here to chat with you."]
+    },
+    {
+      "tag": "motivation",
+      "patterns": ["motivate me", "i need motivation", "encourage me"],
+      "responses": ["You are stronger than you think.", "Keep going, you're making progress.", "Every small step matters."]
+    },
+    {
+      "tag": "compliment",
+      "patterns": ["you are nice", "you are smart", "i like you"],
+      "responses": ["Thank you! That means a lot.", "That's kind of you to say!", "You're making me smile!"]
+    },
+    {
+      "tag": "family",
+      "patterns": ["do you have family", "tell me about your family"],
+      "responses": ["I don't have a family like humans, but I enjoy being here with you.", "My world is built around conversations."]
+    },
+    {
+      "tag": "dreams",
+      "patterns": ["what is your dream", "what do you want in life"],
+      "responses": ["My dream is to help people through conversations.", "I want to make chatting useful and enjoyable."]
+    },
+      {
+      "tag": "goodbye",
+      "patterns": ["bye", "goodbye", "see you later", "talk later"],
+      "responses": ["Goodbye! Take care.", "See you later!", "Bye! It was nice talking to you."]
+    }
+
+  ]
+}

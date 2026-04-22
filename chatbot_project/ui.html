@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat BOT</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #000101ec;
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+    }
+
+    .chatbox {
+      width: 420px;
+      background: rgb(10, 11, 11);
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    #messages {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #ffffff;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    input {
+      width: 72%;
+      padding: 10px;
+      font-size: 16px;
+    }
+
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .user {
+      color: rgb(246, 246, 248);
+      margin: 5px 0;
+    }
+
+    .bot {
+      color: rgb(199, 126, 23);
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="chatbox">
+  <h2  style="color: rgb(152, 152, 253);">Friendly AI Assistant</h2>
+  <div id="messages"></div>
+  <input type="text" id="userInput" placeholder="Type a message">
+  <button onclick="sendMessage()">Send</button>
+</div>
+
+<script>
+let intentsData = null;
+
+// Load intents.json
+fetch("intents.json")
+  .then(response => response.json())
+  .then(data => {
+    intentsData = data;
+    addBotMessage("Hello! I am your chatbot.");
+  })
+  .catch(error => {
+    console.error("Error loading intents.json:", error);
+  });
+
+function addUserMessage(text) {
+  const messages = document.getElementById("messages");
+  messages.innerHTML += `<p class="user"><b>You:</b> ${text}</p>`;
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function addBotMessage(text) {
+  const messages = document.getElementById("messages");
+  messages.innerHTML += `<p class="bot"><b>Bot:</b> ${text}</p>`;
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+  const input = document.getElementById("userInput");
+  const userText = input.value.toLowerCase().trim();
+
+  if(userText === "") return;
+
+  addUserMessage(userText);
+
+  let botReply = "I don't understand.";
+
+  if(intentsData) {
+    intentsData.intents.forEach(intent => {
+      intent.patterns.forEach(pattern => {
+        if(userText.includes(pattern.toLowerCase())) {
+          const responses = intent.responses;
+          botReply = responses[Math.floor(Math.random() * responses.length)];
+        }
+      });
+    });
+  }
+
+  addBotMessage(botReply);
+  input.value = "";
+}
+</script>
+
+</body>
+</html>
